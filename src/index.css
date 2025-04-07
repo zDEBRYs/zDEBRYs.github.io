@@ -1,0 +1,72 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 256 20% 10%;
+    --foreground: 0 0% 95%;
+    --card: 256 20% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 256 20% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 250 70% 75%;
+    --primary-foreground: 256 20% 10%;
+    --secondary: 256 10% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 256 10% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 250 70% 75%;
+    --accent-foreground: 256 20% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 256 10% 20%;
+    --input: 256 10% 20%;
+    --ring: 250 70% 75%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  .section-fade-in {
+    @apply opacity-0 translate-y-5 transition-all duration-700;
+  }
+  
+  .section-fade-in.appear {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .glass-card {
+    @apply bg-opacity-20 backdrop-blur-sm bg-card border border-white/10 shadow-lg;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 10px theme('colors.theme.purple' / 60%);
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .glassmorphism-strong {
+    @apply bg-opacity-20 backdrop-blur-lg bg-theme-black border border-white/10 shadow-xl;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
